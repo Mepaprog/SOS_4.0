@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style.css">
+  <title>SOS-4Player</title>
+</head>
+<body>
+  <header></header>
+  <div class="timerCon">
+    <div class="timer" style="background: linear-gradient(to right, white, red, red,white);">30</div>
+  </div>
+  <div class="switchCon">
+    <button id="bs" onclick="switchLetter('S')" style="background-color: yellow;">S</button>
+    <button id="bo" onclick="switchLetter('O')">O</button>
+  </div>
+  <div class="boardCon"></div>
+  <div class="scoresCon">
+    <div class="plr1 isnext" style="background-color:red;">SCORE: <font id="p1s">0</font></div>
+    <div class="plr2" style="background-color: green;">SCORE: <font id="p2s">0</font></div>
+    <div class="plr3" style="background-color: blue;">SCORE: <font id="p3s">0</font></div>
+    <div class="plr4" style="background-color: deeppink;">SCORE: <font id="p4s">0</font></div>
+  </div>
+  <div class="settingsCon"><br>
+    <font>SETTINGS</font><br>
+    <div class="set1">
+      <label for="timev">Set Timer:</label>
+      <input type="number" id="timev" value="30">
+      <label for="bsv">Board Size:</label>
+      <input type="number" id="bsv" value="15">
+    </div><br>
+    <font>Player Color</font><br>
+    <div class="set2">
+      <label for="p1clr">Player 1:</label>
+      <input type="text" id="p1clr" value="red">
+      <label for="p2clr">Player 2:</label>
+      <input type="text" id="p2clr" value="green">
+      <label for="p3clr">Player 3:</label>
+      <input type="text" id="p3clr" value="blue">
+      <label for="p4clr">Player 4:</label>
+      <input type="text" id="p4clr" value="deeppink">
+    </div><br>
+    <button id="save" onclick="saveSetting();">SAVE</button><br>
+  </div>
+  <footer>&nbsp;&nbsp;
+    2023 &copy; Created by <a href="https://www.facebook.com/profile.php?id=61551430809512" target="_blank">Meparanum, Charl</a>
+  </footer>
+  <script src="Script.js"></script>
+</body>
+</html>

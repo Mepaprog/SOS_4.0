@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #403d39;
+      color: white;
+      text-align: center;
+    }
+    header{
+      font-size: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .menu{
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
+    .menubuttons{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .menubuttons>button{
+      width: 7em;
+      height: 3em;
+      border-radius: 0.5em;
+      border-style:double;
+    }
+    #play{/*PLAY BUTTONS*/
+      width: 10em;
+      height: 3em;
+      font-weight:bold;
+    }
+    @media screen and (min-width:600px){
+      .menu{
+        margin-top: 3em;
+      }
+      .menubuttons{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+      }  
+      .menubuttons>button{
+        width: 10em;
+        height: 4em;
+        border-radius: 0.5em;
+        border-style:double;
+      }  
+      #play{/*PLAY BUTTONS*/
+        margin-top: 2em;
+        width: 12em;
+        height: 4em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <font>SOS GAME</font>
+  </header>
+  <hr><br><br>
+  <div class="menu">
+    <div class="menubuttons">
+      <button id="p1" onclick="playerSelection(1)" style="background-color: #ffb703;color: white;">VS_AI</button>
+      <button id="p2" onclick="playerSelection(2)">2-PLAYER</button>
+      <button id="p3" onclick="playerSelection(3)">3-PLAYER</button>
+      <button id="p4" onclick="playerSelection(4)">4-PLAYER</button>
+    </div>
+    <div id="playContainer">
+      <a href="1Player.html"><button id="play">PLAY</button></a>
+    </div>
+  </div>
+  <script>
+    function playerSelection(num){
+      for(let i=1;i<5;i++){
+        document.getElementById('p'+i).style.backgroundColor = '';
+        document.getElementById('p'+i).style.color = '';
+      }
+        document.getElementById('p'+num).style.backgroundColor = '#ffb703';
+        document.getElementById('p'+num).style.color = 'white';
+        document.getElementById('playContainer').innerHTML = '<a href="'+num+'Player.html"><button id="play">PLAY</button></a>';
+    }
+  </script>
+</body>
+</html>

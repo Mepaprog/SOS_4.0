@@ -1,0 +1,338 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width:600px){/* PC VIEW */
+  body{
+    display: grid;
+    height: 100vh;
+    gap: 1rem;
+    background-color: rgb(230,230,230);
+    grid-template-columns: 0.3fr 1fr 0.3fr;
+    grid-template-rows: 0.1fr 0.7fr 1.2fr 0.1fr;
+    grid-template-areas:
+      'header header header'
+      'switch board timer'
+      'scores board settings'
+      'footer footer footer';
+  }
+  header{
+    border: 1px solid;
+    background-color: white;
+    grid-area: header;
+  }
+  .timerCon{
+    border: 1px solid;
+    background-color: white;
+    grid-area: timer;
+    margin-right: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .timer{
+    background: linear-gradient(to right, white, red, red,white);
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+  }
+  .switchCon{
+    border: 1px solid;
+    background-color: white;
+    grid-area: switch;
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .switchCon>button{
+    width: 90%;
+    height: 30%;
+    border-radius: 0.2rem;
+    font-size: xx-large;
+  }
+  .boardCon{
+    grid-area: board;
+  }
+  .boardCon>button{
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-size-adjust: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    box-shadow: 0 0 2px rgba(0,0,0,1);
+  }
+  .scoresCon{
+    border: 1px solid black;
+    background-color: white;
+    grid-area: scores;
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: white;
+  }
+  .scoresCon>div{
+    padding: 10px;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .isnext{
+    width: 130px;
+    height: 30px;
+  }
+  .settingsCon{
+    border: 1px solid;
+    background-color: white;
+    grid-area: settings;
+    margin-right: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .set1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: small;
+    width: 70%;
+    gap: 0.5rem;
+  }
+  .set2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    font-size: small;
+    width: 70%;
+    gap: 0.5rem;
+  }
+  .set1>input,.set2>input{
+    width: 90%;
+    text-align: center;
+    font-size: small;
+  }
+  #save{
+    padding: 0.3rem;
+  }
+  footer{
+    /* border: 1px solid;
+    background-color: white; */
+    grid-area: footer;
+  }
+
+  .f10{
+    font-size: xx-large;
+  }
+  .f20{
+    font-size: x-large;
+  }
+  .f25{
+    font-size: medium;
+  }
+  .f30{
+    font-size: small;
+  }
+  .fabove{
+    font-size: xx-small;
+  }
+  @media (max-width:900px){
+    .boardCon{
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    .switchCon>button{
+      font-size: larger;
+    }
+    .set1>label{
+      font-size: 0.5rem;
+    }
+    .set2>label{
+      font-size: 0.5rem;
+    }
+    .isnext{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    @media(max-height: 550px){
+      .switchCon{
+        gap: 1px;
+      }
+      .switchCon>button{
+        height: 45%;
+      }
+      .timer{
+        height: 60%;
+      }
+      .f10{
+        font-size: small;
+      }
+      .f20{
+        font-size: small;
+      }
+      .f25{
+        font-size: xx-small;
+      }
+      .f30{
+        font-size: xx-small;
+      }
+      .fabove{
+        font-size: xx-small;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px){/* MOBILE VIEW */
+  body{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  header{
+    flex-basis: 100vw;
+    height: 1.5rem;
+  }
+  .timerCon{
+    flex-basis: 30vw;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .timer{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+  }
+  .switchCon{
+    border-radius: 0.2rem;
+    flex-basis: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .switchCon>button{
+    width: 40%;
+    height: 90%;
+    border-radius: 0.2rem;
+  }
+  .boardCon{
+    flex-basis: 100vw;
+    height: fit-content;
+    margin: 0.5rem;
+    height: 20rem;
+  }
+  .boardCon>button{
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-size-adjust: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    box-shadow: 0 0 1px rgba(0,0,0,1);
+  }
+  .scoresCon{
+    flex-basis: 100vw;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: white;
+  }
+  .scoresCon>div{
+    padding: 5px;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .isnext{
+    width: 100px;
+    height: 30px;
+  }
+  .settingsCon{
+    flex-basis: 100vw;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(240,240,240);
+  }
+  .set1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: small;
+    width: 50%;
+    gap: 0.5rem;
+  }
+  .set2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    font-size: small;
+    width: 50%;
+    gap: 0.5rem;
+  }
+  .set1>input,.set2>input{
+    width: 90%;
+    text-align: center;
+    font-size: small;
+  }
+  #save{
+    width: 5rem;
+    height: 2rem;
+    margin-top: 1rem;
+  }
+  footer{
+    flex-basis: 100vw;
+    height: 1.5rem;
+    /* background-color: rgb(90,90,90); */
+  }
+
+  .f10{
+    font-size: large;
+  }
+  .f20{
+    font-size: x-small;
+  }
+  .f25{
+    font-size: 0.48rem;
+  }
+  .f30{
+    font-size: 0.3rem;
+  }
+  .fabove{
+    font-size: 0.2rem;
+  }
+}
